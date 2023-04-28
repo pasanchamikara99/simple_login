@@ -1,0 +1,26 @@
+<div>
+    <h2 style="text-align:center;margin-top:15px">User Management </h2>
+
+    <a class="btn btn-success" style="color: white; margin: 10px;" (click)="addUser()" >Add User</a>
+
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of userList; let i = index">
+            <td>{{user.name}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td><a class="btn btn-danger" style="color: white; margin: 10px;" (click)="delete(user.id)">Delete</a>
+                <a class="btn btn-primary" style="color: white;" (click)="update(user.id)">Update</a>
+           </td>
+        </tr>
+    </table>
+</div>
+
